@@ -22,22 +22,22 @@ describe("Page start", () => {
     expect(true).toBeTruthy();
   });
 
-  // test("Click on the button", async () => {
-  //   jest.setTimeout(5000);
+  test("Click on the button", async () => {
+    jest.setTimeout(5000);
 
-  //   await page.goto("https://tereshcuk.github.io/WorkingHTMLForms_1/");
+    await page.goto("https://tereshcuk.github.io/WorkingHTMLForms_1/");
 
-  //   await page.waitForSelector("#formContainer");
-  //   const submit = await page.$("button");
-  //   await submit.click();
+    await page.waitForSelector("#formContainer");
+    const submit = await page.$("button");
+    await submit.click();
 
-  //   await page.waitForSelector(".popover", { state: "attached" });
-  //   const isPopoverVisible = await page.evaluate(() => {
-  //     const popover = document.querySelector(".popover");
-  //     return !!(popover && popover.style.display !== "none");
-  //   });
-  //   expect(isPopoverVisible).toBe(true);
-  // });
+    await page.waitForSelector(".popover", { state: "attached" });
+    const isPopoverVisible = await page.evaluate(() => {
+      const popover = document.querySelector(".popover");
+      return !!(popover && popover.style.display !== "none");
+    });
+    expect(isPopoverVisible).toBe(true);
+  });
 
   afterEach(async () => {
     if (browser) {
